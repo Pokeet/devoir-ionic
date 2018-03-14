@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { MeteoPageModule } from '../pages/meteo/meteo.module';
+import { MeteoProvider } from '../providers/meteo/meteo';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    MeteoPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -24,7 +27,8 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MeteoProvider
   ]
 })
 export class AppModule {}
